@@ -1,0 +1,10 @@
+.container{  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: pink;
+}
+.desc{
+  color: red;
+}
