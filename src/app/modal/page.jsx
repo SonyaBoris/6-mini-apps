@@ -8,17 +8,21 @@ const Modal = () => {
 
   const [open, setOpen] = React.useState(false);
   return (
-    <main className={styles.container}>
+    <main className={styles.main}>
       <button className={styles.open} onClick={() => setOpen(true)}>Открыть модальное окно</button>
       {open && (
-        <div className={styles.overlay}>
-          <div className={styles.modal}>
+        <div className={styles.container}>
+          <div className={styles.modalContainer}>
             <div className={styles.modalContent}>
-              <h4>это модальное окно</h4>
-              <div className={styles.fon}></div>
-              <button onClick={() => setOpen(false)}>Понятно</button>
+              <div className={styles.modalDist}>
+                
+                  <h4 className={styles.modalTitle}>Это модальное окно</h4>
+                  <p className={styles.modalDesc}>Здесь какой то текст какой то текст какой то текст какой то текст какой то текст какой то текст</p>
+                  
+                
+                <button className={styles.close} onClick={() => setOpen(false)}>Закрыть окно</button>
+              </div>
             </div>
-
           </div>
         </div>
       )}

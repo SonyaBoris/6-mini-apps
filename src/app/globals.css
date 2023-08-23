@@ -7,7 +7,7 @@ body{
   display: flex;
   justify-content: space-between;
   height: 100vh;
-  background-color: #fff;
+  background-color: #212121;
   color: #222;
   font-weight: 300;
 }

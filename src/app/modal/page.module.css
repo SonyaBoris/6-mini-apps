@@ -1,39 +1,162 @@
-.container{
+.main{
+  height: 90%;
+  width: 100%;
+  background-color: #212121;
   display: flex;
   justify-content: center;   
 }
 
 .open{
+  border: none;
+  color: hsla(192, 100%, 88%, 0.806);  
+  background-color: transparent;
+  cursor: pointer;
   position: absolute;
-  height: 40px;
+  top: 46%;
+  height: 6%;
   width: 200px;
-  background-color: rgb(255, 194, 41);
-  z-index: 0;
-
-}
-.overay{
   
+  z-index: 0;
 }
 
-.modal{
-  position: absolute;
-  left: 35%;
-  top: 40%;
-  width: 30%;  
-  border: 1px solid #000;
-  background-color: #fff;
-  z-index: 1;
+.open:hover {
+  transition: all 1s ease-in-out;
+  background: linear-gradient(90deg, transparent 0%, rgba(102, 224, 255, 0.2) 27%, rgba(102, 224, 255, 0.2) 63%, transparent 100%);
 }
-.modalContent{
-  margin: 20px auto;
+
+
+.container{
+  font-weight: bold;
   display: flex;
+  margin: auto;
+  aspect-ratio: 16/9;
+  align-items: center;
+  justify-items: center; 
+  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;  
-  gap: 20px;
+  gap: 1em;
 }
 
-.fon{
-  width: 100px;
-  height: 100px;
-  background-color: rebeccapurple;
+.modalContainer {
+  filter: drop-shadow(46px 36px 24px #4090b5) drop-shadow(-55px -40px 25px #9e30a9);
+  animation: blinkShadowsFilter 8s ease-in infinite;
+}
+
+.modalContent {
+  display: grid;
+  align-content: center;
+  justify-items: center;  
+  padding-inline: 1em;
+}
+
+.modalContent::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(40px);
+  -webkit-clip-path: polygon(26% 0, 66% 0, 92% 0, 100% 8%, 100% 89%, 91% 100%, 7% 100%, 0 92%, 0 0);
+  clip-path: polygon(26% 0, 66% 0, 92% 0, 100% 8%, 100% 89%, 91% 100%, 7% 100%, 0 92%, 0 0);
+  background: rgba(122, 251, 255, 0.5568627451);
+  transition: all 1s ease-in-out;
+}
+
+.modalContent::after {
+  content: "";
+  position: absolute;
+  width: 98%;
+  height: 98%;
+  box-shadow: inset 0px 0px 20px 20px #212121;
+  background: repeating-linear-gradient(to bottom, transparent 0%, rgba(64, 144, 181, 0.6) 1px, rgb(0, 0, 0) 3px, hsl(295, 60%, 12%) 5px, #153544 4px, transparent 0.5%), repeating-linear-gradient(to left, hsl(295, 60%, 12%) 100%, hsla(295, 60%, 12%, 0.99) 100%);
+  -webkit-clip-path: polygon(26% 0, 31% 5%, 61% 5%, 66% 0, 92% 0, 100% 8%, 100% 89%, 91% 100%, 7% 100%, 0 92%, 0 0);
+  clip-path: polygon(26% 0, 31% 5%, 61% 5%, 66% 0, 92% 0, 100% 8%, 100% 89%, 91% 100%, 7% 100%, 0 92%, 0 0);
+  animation: backglitch 50ms linear infinite;
+}
+
+.modalDist {
+  z-index: 80;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  width: 100%;
+  padding-inline: 1em;
+  padding-block: 1.2em;
+  grid-template-columns: 1fr;
+}
+
+.modalContent:focus-within::before {
+  transition: all 1s ease-in-out;
+  background: hsla(0, 0%, 100%, 0.814);
+}
+.modalTitle{
+  font-size: 32px;
+  color: hsla(192, 100%, 88%, 0.806);
+}
+.modalDesc{
+  height: 150px;
+  width: 350px;
+  font-weight: normal;
+  color: hsla(192, 100%, 88%, 0.806);
+}
+
+.close{
+  border: none;
+  color: hsla(192, 100%, 88%, 0.806);  
+  background-color: transparent;
+  cursor: pointer;
+}
+.close:hover {
+  transition: all 1s ease-in-out;
+  background: linear-gradient(90deg, transparent 0%, rgba(102, 224, 255, 0.2) 27%, rgba(102, 224, 255, 0.2) 63%, transparent 100%);
+}
+
+@keyframes backglitch {
+  0% {
+    box-shadow: inset 0px 20px 20px 30px #212121;
+  }
+
+  50% {
+    box-shadow: inset 0px -20px 20px 30px hsl(297, 42%, 10%);
+  }
+
+  to {
+    box-shadow: inset 0px 20px 20px 30px #212121;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate(-50%, 20%);
+  }
+
+  50% {
+    transform: rotate(180deg) translate(40%, 10%);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-50%, 20%);
+  }
+}
+
+@keyframes blinkShadowsFilter {
+  0% {
+    filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706)) drop-shadow(-55px -40px 28px #9e30a9);
+  }
+
+  25% {
+    filter: drop-shadow(46px -36px 24px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-55px 40px 24px #9e30a9);
+  }
+
+  50% {
+    filter: drop-shadow(46px 36px 30px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-55px 40px 30px rgba(159, 48, 169, 0.2941176471));
+  }
+
+  75% {
+    filter: drop-shadow(20px -18px 25px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-20px 20px 25px rgba(159, 48, 169, 0.2941176471));
+  }
+
+  to {
+    filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706)) drop-shadow(-55px -40px 28px #9e30a9);
+  }
 }
