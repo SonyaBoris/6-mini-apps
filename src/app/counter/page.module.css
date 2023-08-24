@@ -2,26 +2,62 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .counter{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  color: hsla(192, 100%, 88%, 0.806);
+  
 }
 .tittle{
   font-size: 58px;
 }
 .number{
   font-size: 100px;
+  filter: drop-shadow(46px 36px 24px #4090b5) drop-shadow(-55px -40px 25px #9e30a9);
+  animation: blinkShadowsFilter 8s ease-in infinite;
 }
 
 .buttons{
   display: flex;
   gap: 10px;
+  
 }
 .btn{
   width: 100px;
   height: 45px;
-  background-color: greenyellow;
+  border: 1px solid hsla(192, 100%, 88%, 0.806);
+  color: hsla(192, 100%, 88%, 0.806);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+.btn:hover{
+  background-color: hsla(192, 100%, 88%, 0.806);
+  color: #212121;
+}
+
+@keyframes blinkShadowsFilter {
+  0% {
+    filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706)) drop-shadow(-55px -40px 28px #9e30a9);
+  }
+
+  25% {
+    filter: drop-shadow(46px -36px 24px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-55px 40px 24px #9e30a9);
+  }
+
+  50% {
+    filter: drop-shadow(46px 36px 30px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-55px 40px 30px rgba(159, 48, 169, 0.2941176471));
+  }
+
+  75% {
+    filter: drop-shadow(20px -18px 25px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-20px 20px 25px rgba(159, 48, 169, 0.2941176471));
+  }
+
+  to {
+    filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706)) drop-shadow(-55px -40px 28px #9e30a9);
+  }
 }

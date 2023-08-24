@@ -3,8 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 50px;
-  background-color: pink;
 }
 .desc{
-  color: red;
+  color: hsla(192, 100%, 88%, 0.806);
 }
