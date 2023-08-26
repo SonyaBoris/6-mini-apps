@@ -1,0 +1,34 @@
+.block{  
+  border: 1px solid hsla(192, 100%, 88%, 0.806);
+  color: hsla(192, 100%, 88%, 0.806);;
+}
+.currencies{  
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;  
+}
+li{
+  padding: 10px 10px;
+  border: 1px solid hsla(192, 100%, 88%, 0.806);
+  list-style: none;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+li.active{
+  background-color: hsla(192, 100%, 88%, 0.806);
+  color: #323232;
+}
+.arrow{
+  border: none;
+}
+input{
+  border: 1px solid hsla(192, 100%, 88%, 0.806);
+  background-color: transparent;
+  color: hsla(192, 100%, 88%, 0.806);
+  margin: 10px;
+  padding: 10px;
+  width: 400px;
+  height: 100px;
+}
